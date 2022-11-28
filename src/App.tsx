@@ -1,17 +1,32 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Navbar } from './components/estaticos/navbar/Navbar'
 import { Footer } from './components/estaticos/footer/Footer';
-import { Home } from './paginas/Home';
+import { Home } from './paginas/home/Home';
+import { Login } from './paginas/login/Login';
+import { height, minHeight } from '@mui/system';
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
-        <Home />
-      <Footer />
-    </>
+        <Switch>
+          <div style={{minHeight: '100vh'}}>
+            <Route exact path='/'>
+              <Login />
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <Route path='/home'>
+              <Home />
+            </Route>
+          </div>
+        </Switch>
+      < Footer />
+    </Router>
   );
 }
 
-export default App  ;
+export default App;
