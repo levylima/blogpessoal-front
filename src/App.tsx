@@ -12,22 +12,20 @@ function App() {
   return (
     <Router>
       <Navbar />
-        <Routes>
-          <div style={{minHeight: '100vh'}}>
-            <Route path='/'>
-              <Login />
-            </Route>
-            <Route path='/login'>
-              <Login />
-            </Route>
-            <Route path='/home'>
-              <Home />
-            </Route>
-            <Route path='/cadastrousuario'>
-              <CadastroUsuario />
-            </Route>
-          </div>
-        </Routes>
+      <Routes>
+        <Route path='/' element={<Login />}>
+          <Login />
+        </Route>
+        <Route path='/login' element={<Login />}>
+          <Login />
+        </Route>
+        <Route path='/home' element={<Home />}>
+          <Home />
+        </Route>
+        <Route path='/cadastrousuario' element={<CadastroUsuario />}>
+          <CadastroUsuario />
+        </Route>
+      </Routes>
       < Footer />
     </Router>
   );
