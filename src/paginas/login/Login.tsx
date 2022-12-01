@@ -1,14 +1,14 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import { Button, Grid, TextField, Typography } from "@material-ui/core";
 import { Box } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import { api, login } from '../../services/Service'
 import './Login.css';
 import UserLogin from "../../models/UserLogin";
 
 function Login () {
-    let history = useHistory();
+    let history = useNavigate();
     const [token, setToken] = useLocalStorage('token');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
@@ -35,7 +35,7 @@ function Login () {
         async function onSubmit(e: ChangeEvent<HTMLFormElement>){
             e.preventDefault();
             try{
-                await login(`/usuarios/logar` userLogin, setToken)  
+                await login(`/usuarios/logar`, userLogin, setToken)  
 
                 alert('Usuário logado com sucesso!');
             }catch(error){
