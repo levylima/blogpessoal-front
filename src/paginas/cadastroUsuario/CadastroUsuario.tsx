@@ -5,7 +5,7 @@ import { cadastroUsuario } from "../../services/Service";
 import { Grid, Typography, Button, TextField } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 import { Box } from "@mui/material";
-import { updateModuleBlock } from "typescript";
+import User from "../../models/User";
 
 function CadastroUsuario () {
 

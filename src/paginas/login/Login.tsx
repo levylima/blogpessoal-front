@@ -8,7 +8,7 @@ import './Login.css';
 import UserLogin from "../../models/UserLogin";
 
 function Login () {
-    let history = useNavigate();
+    let navigate = useNavigate();
     const [token, setToken] = useLocalStorage('token');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
@@ -28,7 +28,7 @@ function Login () {
         }
             useEffect(() => {
                 if(token !=''){
-                    history.push('/home')
+                    navigate('/home')
                 }
             }, [token])
 

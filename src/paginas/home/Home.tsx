@@ -1,9 +1,8 @@
-import { Button, Grid, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
 import React from 'react';
+import {Typography, Box, Grid, Button} from '@material-ui/core';
 import './Home.css';
 
-function Home(){
+function Home() {
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
@@ -25,7 +24,7 @@ function Home(){
                 </Grid>
             </Grid>
         </>
-    )
+    );
 }
 
-export { Home };
+export default Home;
