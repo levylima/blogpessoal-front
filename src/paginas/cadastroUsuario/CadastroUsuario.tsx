@@ -16,7 +16,6 @@ function CadastroUsuario () {
             id: 0,
             nome: '',
             usuario: '',
-            foto: '',
             senha: ''
         })
 
@@ -25,14 +24,12 @@ function CadastroUsuario () {
             id: 0,
             nome: '',
             usuario: '',
-            foto: '',
             senha: ''
         })
 
     useEffect(() => {
         if (userResult.id != 0) {
             navigate("/login")
-            console.log(userResult)
         }
     }, [userResult])
 
