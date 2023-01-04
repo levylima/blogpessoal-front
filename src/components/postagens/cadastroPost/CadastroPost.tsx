@@ -54,7 +54,7 @@ function CadastroPost() {
     /* Se esse Id for diferente de "undefined", significa então que eu tenho um Id. Logo, se eu tenho um Id, eu vou fazer uma busca(findByIdPostagem). Eu vou pesquisar uma postagem por meio de um Id, daí é passado um Id que está sendo monitorando como parâmetro dessa função(findByIdPostagem).*/
     /* Essa função "findByIdPostagem" faz uma busca na nossa API só que pelo Id. Então ela vai na rota de postagens, aí ela coloca, depois da barra, o Id daquela Postagem específica. Aí as informações dessa Postagem que são retornadas vão ser armazenadas no State "Postagem"(que é o "setPostagem"). Então é possível armazenar as informações de cada Postagem dos campos acima. */
     /* Então o State "Postagem" */
-    
+
     useEffect(() => {
         getTemas()
         if (id !== undefined) {
@@ -78,6 +78,12 @@ function CadastroPost() {
         })
     }
 
+    /* A função "updatedPostagem" irá preencher o State "Postagem" com os temas, se você estiver mexendo no input de título ou texto(input do HTML) */
+    /* A partir do momento que eu estiver mexendo num desses 2, ela irá acionar a função "updatedPostagem", que por sua vez vai preencher o nosso State "Postagem". */
+    /* Ou seja, ela vai montar um objeto com as informações que o usuário está digitando. */
+    /* A "OnSubmit" é para o envio das informações que o usuário preencher na Postagem. */
+    /* A função "Back" irá direcionar para a rota de Postagem, onde são listadas todas as postagens. */
+    /* */
     function updatedPostagem(e: ChangeEvent<HTMLInputElement>) {
 
         setPostagem({
