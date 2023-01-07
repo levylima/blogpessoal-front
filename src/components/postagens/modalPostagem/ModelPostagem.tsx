@@ -36,7 +36,9 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-/* E essa função(getModalStyle), ela é inserida dentro de um outro State */
+/* E essa função(getModalStyle), ela é inserida dentro de um outro Statel, que é um State chamado de "modalStyle". */
+/* Inicializamos o estado naturalmente com essa função, ou seja, esse State(modalStyle) está guardando as informações que devem centralizar o nosso modal. */
+/* Então esse State(modalStyle) é aplicada na const body. */
 function ModalPostagem () {
   const classes = useStyles();
   const [modalStyle] = React.useState(getModalStyle);

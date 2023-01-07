@@ -1,9 +1,24 @@
-import React from 'react';
-import {Typography, Box, Grid, Button} from '@material-ui/core';
-import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem'
+import React, { useEffect } from 'react';
+import {Typography, Grid, Button} from '@material-ui/core';
+import {Box} from '@mui/material';
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
 import './Home.css';
+import { useNavigate } from 'react-router';
+import useLocalStorage from 'react-use-localstorage';
 
 function Home() {
+
+    let navigate = useNavigate();
+    const [token, setToken] = useLocalStorage('token');
+    
+    useEffect(() => {
+      if (token == "") {
+          alert("Você precisa estar logado")
+          navigate("/login")
+  
+      }
+  }, [token])
+
     return (
         <>
             <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
