@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router';
 import useLocalStorage from 'react-use-localstorage';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModelPostagem';
+import { Link } from 'react-router-dom';
 
 function Home() {
 
@@ -33,8 +35,11 @@ function Home() {
                     </Box>
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
+                            <ModalPostagem />
                         </Box>
-                        <Button variant="outlined" className='botao'>Ver Postagens</Button>
+                        <Link to='/posts' className="text-decorator-none">
+                            <Button variant="outlined" className='botao'>Ver Postagens</Button>
+                        </Link>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
