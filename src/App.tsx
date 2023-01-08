@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/estaticos/navbar/Navbar'
-import { Footer } from './components/estaticos/footer/Footer';
+import Footer from './components/estaticos/footer/Footer'
 import { CadastroUsuario } from './paginas/cadastroUsuario/CadastroUsuario';
 import { Login } from './paginas/login/Login';
 import Home from './paginas/home/Home';
